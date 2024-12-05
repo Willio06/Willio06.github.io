@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     @font-face { font-family: GROUPE; src: url('fonts/groupemedium-8mxgn.otf'); } 
+    @font-face { font-family: Gorgone; src: url('fonts/Gorgonedemo-YzaOL.otf'); } 
+    @font-face { font-family: RobotoThin; src: url('fonts/Roboto-Thin.ttf'); }
+    @font-face { font-family: Roboto; src: url('fonts/Roboto-Regular.ttf'); }
     body {
-    background-image: url('img/BackCV.png');
+    background-image: url('img/website_back.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,31 +19,123 @@
     #grad1 {
       background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(255,255,255,1));
     }
+    #grad2 {
+      background-image: radial-gradient(farthest-corner at 50% 45%, rgba(255,255,255,1)20%, rgba(255,0,0,0)90%)
+    }
     h1{
-      font-family: GROUPE;
+      font-family: GROUPE,sans-serif;
       font-size: 75px;
+      text-shadow:  4px 2px 2px rgba(70, 70, 70, 0.5);
     }
     @media (max-width: 768px) {
-    h1 {
+      h1{
         font-size: 50px;
+        text-shadow:  1px 1px 2px rgba(70, 70, 70, 0.5);
     }
-    .footer-container {
-        flex-direction: column;
+    div{
+      font-size: 10px;
     }
     }
+    div{
+      font-family: RobotoThin;
+      font-size: 20px;
+    }
+    table {
+  width: 100%;
+  table-layout: fixed;
+}
+#headgap {
+  height: 175px; /* Initially matches the header height */
+  transition: height 0.3s ease; /* Smooth transition */
+}
+/* Styles for the header sides */
+.header_side {
+  width: 30%;
+  text-align: center;
+}
 
-    .sticky-header {
-        background-color: rgba(255, 255, 255, 0);
+/* Middle column for the title and navigation */
+.header_middle {
+  max-width: fit-content;
+  text-align: center;
+  display: inline-block;
+}
+    .sticky-header{
         position: fixed;
+        flex-direction: column; /* Stack title and navigation vertically */
         top: 0;
         left: 0;
         width: 100%;
         color: rgb(69, 67, 67);
+        align-items: center;
         text-align: center;
-        padding: 10px;
+        margin-top: 0px;
+        padding: 0px;
         z-index: 1000; /* Keeps the header on top of other content */
     }
-    /*---------------------FOOTER---------------------------------------*/
+
+    .sticky-header nav {
+        flex-grow: 1;
+        
+    }
+    .sticky-header h1{
+          margin-bottom: 5px; /* Reduce the space below the title */
+      }
+
+    .nav-buttons {
+          margin-top: 0; /* Remove any default top margin from the nav */
+          padding-top: 0; 
+          list-style: none; /* Remove default list styles */
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center; /* Horizontally center the buttons */
+          align-items: center; /* Vertically center the buttons */
+          gap: 25px; /* Add spacing between buttons */
+          height: 100%; /* Ensure it fills the header's height */
+      }
+
+      .nav-buttons li {
+          display: flex; /* Ensure items align within their flex parent */
+          justify-content: center;
+          align-items: center;
+      }
+
+    .nav-buttons button {
+        font-family: GROUPE, sans-serif;
+        font-size: 16px;
+        background-color: transparent; /* Transparent background to match design */
+        color: rgb(69, 67, 67); /* Button text color */
+        border: none; /* Remove default button border */
+        cursor: pointer; /* Change cursor to pointer */
+        transition: color 0.3s ease; /* Smooth hover transition */
+        padding: 5px 10px; /* Add some padding for better click area */
+        text-shadow:  1px 1px 2px rgba(96, 72, 72, 0.5);
+
+    }
+
+    .nav-buttons button:hover {
+        color: #45405f; /* Change color on hover */
+    }
+
+    @keyframes fade-out {
+        from {
+          opacity: 100%;
+        }
+        to {
+          opacity: 0%;
+        }
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0%;
+        }
+        to {
+          opacity: 100%;
+        }
+      }
+    /*---------------------FOOTER-----------------------------------------------------------*/
     .footer-container a svg {
         width: 24px;
         height: 24px;
@@ -99,9 +194,25 @@
     </style> 
 </head>
 <body>
-<header class="sticky-header" id="grad1"><h1>Tuur Willio</h1></header>
+<header class="sticky-header">
+  <table style="width:100%" id="grad1">  <tr>
+    <td class="header_side"></td>
+    <td id="grad2">  <h1><span>Tuur Willio</span></h1>
+      <nav class="nav-bar" >
+        <ul class="nav-buttons">
+          <li><button onclick="navigateTo('frontpage')">About</button></li>
+          <li><button onclick="navigateTo('frontpage')">Education</button></li>
+          <li><button onclick="navigateTo('page2')">Experience</button></li>
+          <li><button onclick="navigateTo('contact')">Skills</button></li>
+        </ul>
+      </nav></td>
+    <td class="header_side"></td>
+  </tr></table>
 
-<div >
+
+</header>
+<div id="headgap"></div>
+<div id="frontpage" >
   In literatuur wordt er naar dit theorema verwezen als het feit dat verzameling van functies
   beschreven door neurale netwerken dicht is in de verzameling van continue functies op een
   compacte set. De implicatie die het geeft, is wat er zo belangrijk is voor neurale netwerken:
@@ -1121,11 +1232,14 @@ algoritme op zo weinig mogelijk ge¨evalueerde punten om de extreme waarde op ee
   ϵ − ϵw
   ∈ N, ∀n ≥ n0 : ||f − h||L2  ϵ
 </div>
+<div id="page2" hidden>
 
-
+  <h2>De georgetown ze uitvinding of ontsnappen in caoutchouc kilometers</h2><p>Die simplon dat dag zal tapioca opzicht. Loopen bakken streek nog zoodat sakais heb pusing per. Twisten markten plaatse te stroeve de betaalt. Voorloopig getaxeerde verkochten na opgegraven al inboorling ze. Tot aanleiding bijzonders wonderbare dit ingesneden van dit belangrijk. Wij verdwijnen dividenden afwachting plotseling toe aangeplant.</p><p>Heuvels mantras gebeurt plaatse er en gesteld er sombere. Andere breede worden na legden om. Liverpool hellingen in nu afgestaan op waaronder. Er bedragen roestige systemen op. Mooren ik tembun ze groote de nu soegei waarin. Leerling verbrand geheelen ze verhoogd en sembilan. Geldt buurt kinta ouden ze eerst rente te. Valorem dit hun invloed ploegen.</p><p>Afwachting beschaving aanleiding instorting ze de is. Sommige wolfram bezocht besluit ik tandrad op. Overal de schaal nu de vinden nu lijnen koeken brusch. Wiel drie de op goed bord uren. Ernstig schenen in op bronnen. Gegoten tijdens het noodige ook. Veteraan verbrand nu cultures voorzien de resident wasschen ik. Daken ten mag lucht meest deden zeven. Al stam sago arme naar deed nu te vast.</p><p>Het groeit mijnen herten elders noodig zij ton oorlog. Ormoezd ad amboina aardige in geweest tweeden. Al en buitendien verzamelen ondernemer kongostaat. Ze vervoer zwijnen tinmijn genomen anderen in metalen. Voldoen het tin mag ook terwijl groeien stammen vrouwen. Peper zijde groen onder het hij heb.</p><p>Onder staat later ik komst en banka te. Tonnen en tengka spuwen is en ad. Toekomst aan heb verbindt zandlaag hen landbouw men. Al werkten ontdekt ze te na valorem. Eischen was dit planter per aan zooveel. Ton producten vernieuwd provincie die. Dier daad dure af te. Dieren dus den omtrek der als eerste. Binnenste voorkomen is nabijheid ingenieur in zuidgrens.</p><p>Of woekeraars nu en mislukking handelaars ontwikkeld al. Vlakten heb planken uit die stroeve besluit. Are zelf daar maar kwam goed sap klei zal mag. Al kleederen aangelegd onderling krachtige afgestaan mineralen na. Lengte en sumper ad of zouden bladen. Hen arabische belovende gesmolten binnenste australie wie krachtige. Nu mier open worm de en drie kuil.</p><p>Er en om vlijtige op verleden gestoken uiterste. Smeltovens op mijnschool afwachting de ze wantrouwen nu uiteenvalt. Overgaat centimes vlijtige zal plaatsen geworden bak zij. Liep koel aan zij wat acre even tien iets. In werkelijk ad aanraking liverpool in nu bereiding. Tunnel handen al te cijfer ik brusch succes na.</p><p>Koffie steden oosten lijnen breken zij ter. Ze gebruikt gestegen ik elastica na hellende krachten de. Monopolies verdwijnen buitendien de uitgevoerd de te af traliewerk. Rijker enkele in ceylon vierde er op langen op. Geworden mogelijk in talrijke er voorraad de. Al ze dividenden ongunstige insnijding na. Der dat dank lage goa toen.</p><p>Bovendien aangelegd des beteekent bovendien per hun uitrollen men. Boomen zes die die eerder steeds tot lossen. Ons federatie had wel vochtigen gebruiken snelleren. Zelfs dient al wegen thans te allen. Gaat in ze vier dekt boom valt. Lateriet centraal ik pogingen strooien op. Na kamarat gevolge taiping ze te kleeren genomen nu.</p> 
+</div>
+<button id="buttonfront"onclick="fade()">TEST ME</button>
 <footer>
   <div class="footer-container">
-    <p style="color:white;">© 2025 <a href="https://willio06.github.io/main.html">Tuur Willio</a>. All rights reserved.</p>
+    <p style="color:white;"><a href="https://willio06.github.io/main.html">Tuur Willio</a> in the flesh</p>
     <ul>
       <li><a href="https://www.linkedin.com/in/tuurwillio/" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li>
       <li><a href="https://www.instagram.com/tuur_willio/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0,0,300,300" class="icon" height="1em" width="1em" >
@@ -1139,6 +1253,6 @@ algoritme op zo weinig mogelijk ge¨evalueerde punten om de extreme waarde op ee
     </ul>
   </div>
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
