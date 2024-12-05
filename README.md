@@ -1,2 +1,2 @@
 # Willio06.github.io
-main HTML page
+use link https://willio06.github.io/main.html to get to main page!
