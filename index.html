@@ -28,7 +28,37 @@
 <div id="headgap"></div>
 
 
-<div id="about">This is the About section!</div>
+<div id="about">
+  <div id="inside_slider"><button>previous</button><div id="gapmaker"></div><button>next</button></div>
+  
+  <div id="inside">
+    <div class="about-slideshow-container">
+      <div class="about-slides about-active">
+            <img src="img/TuurFancy2.jpg" style="width:100%; height:100%;">
+        </div>
+        <div class="about-slides">
+            <img src="img/TuurBerg.jpg" style="width:100%; height:100%;">
+        </div>
+        <a class="about-prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="about-next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+    <div class="info">
+      <ul>
+        <li><b>Place of Birth: </b>Belgium, Antwerp, Wilrijk</li>
+        <li><b>Birthday: </b>06/02/2004</li>
+        <li><b>Age: </b><div id="ageCalc"></div></li>
+        <li><b>Siblings: </b><ul>
+          <li>2 older brothers</li>
+          <li>2 sisters (triplets)</li>
+        </ul></li>
+        <li><b>Occupation: </b>student</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
 <div id="education" hidden>This is the Education section!</div>
 <div id="experience" hidden>This is the Experience section!</div>
 <div id="skills" hidden>This is the Skills section!</div>

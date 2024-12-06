@@ -3,9 +3,9 @@
 @font-face { font-family: RobotoThin; src: url('fonts/Roboto-Thin.ttf'); }
 @font-face { font-family: Roboto; src: url('fonts/Roboto-Regular.ttf'); }
 body {
-background-image: url('img/website_back.png');
+background-image: url('img/website_back2.png');
 background-size: cover;
-background-position: center;
+background-position: center center;
 background-repeat: no-repeat;
 }
 
@@ -31,7 +31,8 @@ div{
 }
 div{
   font-family: RobotoThin;
-  font-size: 20px;
+  font-size: 30px;
+
 }
 table {
 width: 100%;
@@ -46,7 +47,66 @@ transition: height 0.3s ease; /* Smooth transition */
 width: 30%;
 text-align: center;
 }
+#about div{
+    display: inline-block;
+    
+}
+#inside_slider {
+    position: relative;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Ensure exact centering */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+#gapmaker{
+    width: 50px;
+    height: 1px;
+}
+#inside_slider button {
+    font-family: Roboto, sans-serif;
+    font-size: 14px; /* Slightly smaller text */
+    background-color: rgba(40, 56, 74, 0.8); /* Subtle background */
+    color: white; /* Light text color for contrast */
+    border: none; /* Remove the default border */
+    border-radius: 6px; /* Slightly rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    padding: 8px 18px; /* Less padding to make buttons slimmer */
+    text-shadow: 1px 1px 3px rgba(96, 72, 72, 0.5);
+    font-weight: bold; /* Bold text for better visibility */
+    width: 120px; /* Slightly smaller width */
+    height: 40px; /* Slightly smaller height */
+}
+
+/* Hover effect for the buttons */
+#inside_slider button:hover {
+    background-color: rgba(63, 106, 155, 1); /* Darker background on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
+}
+
+#inside_slider button:focus {
+    outline: none; /* Remove the default focus outline */
+}
+#about #inside{
+    position: relative;
+    display: flex; /* Enables flexbox layout */
+    align-items: flex-start; /* Aligns items at the top */
+    justify-content:center; /* Adds space between the two items */
+    gap: 20px; /* Optional: spacing between `.info` and `.about-slideshow-container` */
+    margin: 20px 0; /* Optional: adds margin around the wrapper */
+}
+[hidden] {
+    display: none !important; /* Ensure hidden elements are truly removed */
+}
+.info{
+    border: 5px solid rgba(0, 0, 0, 0.5); /* Subtle border */
+    border-radius: 10px; /* Rounded corners for softness */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    background-color: rgba(189, 211, 252, 0.5); /* Optional: background color */
+}
 /* Middle column for the title and navigation */
 .header_middle {
 max-width: fit-content;
@@ -109,6 +169,8 @@ display: inline-block;
 
 .nav-buttons button:hover {
     color: #45405f; /* Change color on hover */
+    text-shadow: 1px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
+
 }
 
 @keyframes fade-out {
@@ -128,17 +190,7 @@ display: inline-block;
       opacity: 100%;
     }
   }
-  .hidden {
-    display: none;
-  }
 
-  .fade-out {
-    animation: fade-out 0.5s forwards;
-  }
-
-  .fade-in {
-    animation: fade-in 0.5s forwards;
-  }
 /*---------------------FOOTER-----------------------------------------------------------*/
 .footer-container a svg {
     width: 24px;
@@ -153,7 +205,7 @@ display: inline-block;
     flex-direction: column;
     align-items: center;
     padding: 20px 16px;
-    background: linear-gradient(145deg, rgb(202,202,202,0.8), #a4b7c2); /* Subtle gradient for a 3D look */
+    background: linear-gradient(145deg, rgb(202,202,202,0.8), rgba(164,183,194,0.8)); /* Subtle gradient for a 3D look */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Soft shadow around the footer */
     border-radius: 12px; /* Rounded corners for a smoother look */
     position: relative; /* Ensures it looks like an overlay */
@@ -189,125 +241,57 @@ display: inline-block;
 
   .footer-container p {
     margin: 0;
-    color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
   }
 
 
-/*-----------------------------------------------------------------------------------------------------*/
-
-
-.passport {
-
-    width: 400px;
-
-    height: 600px;
-
-    background-color: white;
-
-    border: 2px solid #333;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
+/*-----------------------------SLIDE SHOWWWWW------------------------------------------------------------------------*/
+.about-slideshow-container {
     position: relative;
-
+    overflow: hidden; /* Ensures content stays within bounds */
+    width:40%;
+    border: 5px solid rgba(0, 0, 0, 0.5); /* Subtle border */
+    border-radius: 10px; /* Rounded corners for softness */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    background-color: rgba(189, 211, 252, 1); /* Optional: background color */
 }
 
-
-.slideshow-container {
-
-    position: relative;
-
-    height: 300px;
-
-}
-
-
-.slides {
-
+.about-slides {
     display: none;
-
     width: 100%;
-
     height: 100%;
-
 }
 
-
-.active {
-
+.about-active {
     display: block;
-
 }
 
-
-.profile-info {
-
-    padding: 20px;
-
-    text-align: center;
-
-}
-
-
-.profile-info h2 {
-
-    margin: 10px 0;
-
-}
-
-
-.profile-info p {
-
-    margin: 5px 0;
-
-    color: #555;
-
-}
-
-
-.prev, .next {
-
+.about-prev, .about-next {
     cursor: pointer;
-
-    position: absolute;
-
-    top: 50%;
-
+    position: absolute; /* Use absolute positioning to align relative to the container */
+    top: 50%; /* Align arrows vertically in the center */
+    transform: translateY(-50%); /* Adjust for proper centering */
     width: auto;
-
-    padding: 16px;
-
+    padding: 12px;
     color: white;
-
     font-weight: bold;
-
     font-size: 18px;
-
-    border-radius: 0 3px 3px 0;
-
+    border-radius: 50%; /* Optional: Make arrows circular */
     user-select: none;
-
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 2; /* Ensure arrows are above the slides */
 }
 
-
-.next {
-
-    right: 0;
-
-    background-color: #333;
-
+.about-prev {
+    left: 10px; /* Position near the left edge */
 }
 
+.about-next {
+    right: 10px; /* Position near the right edge */
+}
 
-.prev {
-
-    left: 0;
-
-    background-color: #333;
-
+/* Add hover effects for better interactivity */
+.about-prev:hover, .about-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+    color: #f1f1f1; /* Slightly brighter text color */
 }
