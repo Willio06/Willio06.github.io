@@ -1,0 +1,313 @@
+@font-face { font-family: GROUPE; src: url('fonts/groupemedium-8mxgn.otf'); } 
+@font-face { font-family: Gorgone; src: url('fonts/Gorgonedemo-YzaOL.otf'); } 
+@font-face { font-family: RobotoThin; src: url('fonts/Roboto-Thin.ttf'); }
+@font-face { font-family: Roboto; src: url('fonts/Roboto-Regular.ttf'); }
+body {
+background-image: url('img/website_back.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+#grad1 {
+  background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(255,255,255,1));
+}
+#grad2 {
+  background-image: radial-gradient(farthest-corner at 50% 45%, rgba(255,255,255,1)20%, rgba(255,0,0,0)90%)
+}
+h1{
+  font-family: GROUPE,sans-serif;
+  font-size: 75px;
+  text-shadow:  4px 2px 2px rgba(70, 70, 70, 0.5);
+}
+@media (max-width: 768px) {
+  h1{
+    font-size: 50px;
+    text-shadow:  1px 1px 2px rgba(70, 70, 70, 0.5);
+}
+div{
+  font-size: 10px;
+}
+}
+div{
+  font-family: RobotoThin;
+  font-size: 20px;
+}
+table {
+width: 100%;
+table-layout: fixed;
+}
+#headgap {
+height: 175px; /* Initially matches the header height */
+transition: height 0.3s ease; /* Smooth transition */
+}
+/* Styles for the header sides */
+.header_side {
+width: 30%;
+text-align: center;
+}
+
+/* Middle column for the title and navigation */
+.header_middle {
+max-width: fit-content;
+text-align: center;
+display: inline-block;
+}
+.sticky-header{
+    position: fixed;
+    flex-direction: column; /* Stack title and navigation vertically */
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(69, 67, 67);
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+    padding: 0px;
+    z-index: 1000; /* Keeps the header on top of other content */
+}
+
+.sticky-header nav {
+    flex-grow: 1;
+    
+}
+.sticky-header h1{
+      margin-bottom: 5px; /* Reduce the space below the title */
+  }
+
+.nav-buttons {
+      margin-top: 0; /* Remove any default top margin from the nav */
+      padding-top: 0; 
+      list-style: none; /* Remove default list styles */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center; /* Horizontally center the buttons */
+      align-items: center; /* Vertically center the buttons */
+      gap: 25px; /* Add spacing between buttons */
+      height: 100%; /* Ensure it fills the header's height */
+  }
+
+  .nav-buttons li {
+      display: flex; /* Ensure items align within their flex parent */
+      justify-content: center;
+      align-items: center;
+  }
+
+.nav-buttons button {
+    font-family: GROUPE, sans-serif;
+    font-size: 16px;
+    background-color: transparent; /* Transparent background to match design */
+    color: rgb(69, 67, 67); /* Button text color */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: color 0.3s ease; /* Smooth hover transition */
+    padding: 5px 10px; /* Add some padding for better click area */
+    text-shadow:  1px 1px 2px rgba(96, 72, 72, 0.5);
+
+}
+
+.nav-buttons button:hover {
+    color: #45405f; /* Change color on hover */
+}
+
+@keyframes fade-out {
+    from {
+      opacity: 100%;
+    }
+    to {
+      opacity: 0%;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }
+  .hidden {
+    display: none;
+  }
+
+  .fade-out {
+    animation: fade-out 0.5s forwards;
+  }
+
+  .fade-in {
+    animation: fade-in 0.5s forwards;
+  }
+/*---------------------FOOTER-----------------------------------------------------------*/
+.footer-container a svg {
+    width: 24px;
+    height: 24px;
+}
+.footer-container a:hover svg {
+    fill: #45405f;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+    background: linear-gradient(145deg, rgb(202,202,202,0.8), #a4b7c2); /* Subtle gradient for a 3D look */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Soft shadow around the footer */
+    border-radius: 12px; /* Rounded corners for a smoother look */
+    position: relative; /* Ensures it looks like an overlay */
+    margin: 20px 16px;
+  }
+
+  .footer-container a {
+    color: #f5f6f7;
+    text-decoration: none;
+    font-family: GROUPE;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Slight shadow for text depth */
+  }
+
+  .footer-container ul {
+    display: flex;
+    gap: 24px;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .footer-container ul li {
+    transition: transform 0.2s, box-shadow 0.2s; /* Add hover effects for interactivity */
+  }
+
+  .footer-container ul li svg path:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+  }
+
+  .footer-container p {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+  }
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+
+.passport {
+
+    width: 400px;
+
+    height: 600px;
+
+    background-color: white;
+
+    border: 2px solid #333;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    position: relative;
+
+}
+
+
+.slideshow-container {
+
+    position: relative;
+
+    height: 300px;
+
+}
+
+
+.slides {
+
+    display: none;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+.active {
+
+    display: block;
+
+}
+
+
+.profile-info {
+
+    padding: 20px;
+
+    text-align: center;
+
+}
+
+
+.profile-info h2 {
+
+    margin: 10px 0;
+
+}
+
+
+.profile-info p {
+
+    margin: 5px 0;
+
+    color: #555;
+
+}
+
+
+.prev, .next {
+
+    cursor: pointer;
+
+    position: absolute;
+
+    top: 50%;
+
+    width: auto;
+
+    padding: 16px;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+    border-radius: 0 3px 3px 0;
+
+    user-select: none;
+
+}
+
+
+.next {
+
+    right: 0;
+
+    background-color: #333;
+
+}
+
+
+.prev {
+
+    left: 0;
+
+    background-color: #333;
+
+}
