@@ -88,4 +88,38 @@ function changeSlide(n,id) {
 }
 showSlides("about-slides");
 showSlides("exp-slides")
-//-------------------------------------------------slide show2-----------------------------------------------------------
+//-------------------------------------------------Invert Color-----------------------------------------------------------
+function darkmode() {
+    // Set up color properties to iterate through
+    const colorProperties = ['color', 'background-color'];
+
+    // Get all elements in the document
+    const elements = document.querySelectorAll('*');
+
+    // Iterate through every element
+    elements.forEach(element => {
+        colorProperties.forEach(prop => {
+            // Get the current color property value from CSS
+            const currentColor = window.getComputedStyle(element).getPropertyValue(prop);
+
+            // If the color is transparent or not a valid color, continue
+            if (!currentColor || currentColor === 'transparent') return;
+
+            // Try to parse the color using regular expressions for RGB and RGBA
+            const rgbMatch = currentColor.match(/^rgba?\((\d+), (\d+), (\d+)/);
+
+            if (rgbMatch) {
+                // Extract the RGB components from the match
+                const r = parseInt(rgbMatch[1]);
+                const g = parseInt(rgbMatch[2]);
+                const b = parseInt(rgbMatch[3]);
+
+                // Invert each color component
+                const invertedColor = `rgb(${255 - r}, ${255 - g}, ${255 - b})`;
+
+                // Set the inverted color back to the element's inline style (only for the current color property)
+                element.style.setProperty(prop, invertedColor);
+            }
+        });
+    });
+}
