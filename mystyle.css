@@ -4,10 +4,11 @@
 @font-face { font-family: Roboto; src: url('fonts/Roboto-Regular.ttf'); }
 @font-face { font-family: RobotoBold; src: url('fonts/Roboto-Bold.ttf'); }
 body {
-background-image: url('img/website_back2.png');
+background-image: url('img/long_back.png');
 background-size: cover;
 background-position: center center;
 background-repeat: no-repeat;
+background-attachment: fixed;
 }
 
 #grad1 {
@@ -367,7 +368,24 @@ display: inline-block;
   grid-column: span 3; /* Make image span full width in a block */
   text-align: center;
 }
+#education .school .file{
+  grid-column: span 3; /* Make image span full width in a block */
+  text-align: center;
 
+}
+#education .school .file embed{
+    width: 100%;
+  aspect-ratio: 4 / 3;
+}
+#education .school .fileButton button{
+  font-size: 0.7em;
+  padding: 0;
+  border: none;
+  background: none;
+}
+#education .school .fileButton button:hover {
+  cursor: pointer;
+}
 #education .school .img img {
   max-width: 750px;
   object-fit: cover;

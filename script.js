@@ -7,6 +7,13 @@ function fade(id) {
   document.getElementById(id).style.animation = "fade-in 0.5s forwards";
 
 }
+function hide(id, par){
+    div = document.getElementById(id);
+    div.hidden = !div.hidden
+    if(div.hidden){par.innerHTML = "<u>"+par.innerText.replace("hide","show")+"</u>";}
+    if(!div.hidden){par.innerHTML = "<u>"+par.innerText.replace("show","hide")+"</u>";}
+
+}
 //----------------------------------------------------------------------AGE----------------------------------------------------------
 function calculateExactAge(birthDate) {
   const today = new Date(); // Get current date
