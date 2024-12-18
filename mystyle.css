@@ -293,9 +293,60 @@ display: inline-block;
 }
 
 /* Add hover effects for better interactivity */
-.about-prev:hover, .about-next:hover {
+.exp-prev:hover, .exp-next:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
     color: #f1f1f1; /* Slightly brighter text color */
+}
+
+.exp-slideshow-container {
+  position: relative;
+  overflow: hidden; /* Ensures content stays within bounds */
+  max-width: 750px;
+  border: 5px solid rgba(0, 0, 0, 0.5); /* Subtle border */
+  border-radius: 10px; /* Rounded corners for softness */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  background-color: rgba(189, 211, 252, 1); /* Optional: background color */
+  margin: 20px auto; /* Center within the .img div */
+}
+
+.exp-slides {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.exp-active {
+  display: block;
+}
+
+.exp-prev, .exp-next {
+  cursor: pointer;
+  position: absolute; /* Use absolute positioning to align relative to the container */
+  top: 50%; /* Align arrows vertically in the center */
+  transform: translateY(-50%); /* Adjust for proper centering */
+  width: auto;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%; /* Optional: Make arrows circular */
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 2; /* Ensure arrows are above the slides */
+}
+
+.exp-prev {
+  left: 10px; /* Position near the left edge */
+}
+
+.exp-next {
+  right: 10px; /* Position near the right edge */
+}
+
+/* Add hover effects for better interactivity */
+.exp-prev:hover, .exp-next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+  color: #f1f1f1; /* Slightly brighter text color */
 }
 /*------------------------------------------------------------------------------------------------------*/
 #education {
@@ -305,9 +356,23 @@ display: inline-block;
   flex-direction: column;
   gap: 20px;
 }
-
+#experience {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#skills {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 /* Individual school block */
-#education .school {
+.school {
+  scroll-margin-top: 175px; /* Adjust this value based on your header height */
   display: grid;
   grid-template-columns: 1.5fr 2fr 1.5fr;
   grid-template-rows: auto auto;
@@ -322,23 +387,23 @@ display: inline-block;
 }
 
 /* Content Styling */
-#education .school .level {
+.school .level {
   font-size: 1.2em;
   font-family: Roboto;
   font-weight: bold;
   color: #387fb9;
 }
 
-#education .school .timeperiod {
+.school .timeperiod {
   text-align: center;
   font-size: 1em;
   font-weight: bold;
   color: #2a4d69;
 }
-#education .school .degree {
+.school .degree {
   font-family: Roboto;
 }
-#education .school .name {
+.school .name {
   font-size: 1em;
   font-family: Roboto;
   color: #346083;
@@ -346,12 +411,12 @@ display: inline-block;
   margin: 5px 0;
 }
 
-#education .school .location {
+.school .location {
   font-family: Roboto;
   font-size: 0.9em;
   color: #777;
 }
-#education .school .location svg {
+.school .location svg {
   width: 30px; /* Adjust the size of the SVG */
   height: 30px;
   fill: #777; /* Default color of the icon */
@@ -359,42 +424,91 @@ display: inline-block;
 }
 
 /* Hover effect: change SVG color and scale */
-#education .school .location:hover svg {
+.school .location:hover svg {
   fill: #777; /* Change color on hover */
   transform: scale(1.1); /* Enlarge the icon slightly */
 }
 /* Image Section */
-#education .school .img {
+.school .img {
   grid-column: span 3; /* Make image span full width in a block */
   text-align: center;
 }
-#education .school .file{
+.school .file{
   grid-column: span 3; /* Make image span full width in a block */
   text-align: center;
 
 }
-#education .school .file embed{
+.school .file embed{
     width: 100%;
   aspect-ratio: 4 / 3;
 }
-#education .school .fileButton button{
+.school .fileButton button{
   font-size: 0.7em;
   padding: 0;
   border: none;
   background: none;
 }
-#education .school .fileButton button:hover {
+.school .fileButton button:hover {
   cursor: pointer;
 }
-#education .school .img img {
+.school .img img {
   max-width: 750px;
   object-fit: cover;
   border-radius: 6px;
   transition: opacity 0.3s ease;
 }
 
-#education .school .img figcaption {
+.school .img figcaption {
   margin-top: 5px;
   font-size: 0.8em;
   color: #888;
+}
+.work_sep div{
+  font-family: GROUPE;
+  text-align: center;
+  font-size: 1em;
+  color:rgb(69, 67, 67) ;
+}
+/*----------------------------------------------------------------------------------------------------------*/
+.internal-toc {
+  font-family: GROUPE;
+  position: fixed; /* Keeps the TOC fixed in place */
+  top: 30%; /* Adjust to position it below the header */
+  left: 10px; /* Adjust based on where you want it on the screen */
+  width: 300px; /* Set a fixed width */
+  background-color: rgba(251, 251, 251, 0.5);
+  border: 1px solid #808080;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.internal-toc ul {
+  list-style-type: disc; /* Adds dots as bullet points */
+  margin: 0;
+  padding-left: 20px;
+}
+
+.internal-toc li {
+  margin: 5px 0;
+}
+.internal-toc li::marker {
+  color: #387fb9; /* Sets the color of the dots */
+  font-size: 0.5em; /* Optional: Make the dots larger */
+}
+.internal-toc button {
+  font-family: GROUPE;
+  text-decoration: none;
+  color: #387fb9;
+  font-size: 0.6em;
+  border: none;
+  background: none;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+
+.internal-toc button:hover {
+  text-decoration: underline;
+  font-size: 0.65em;
+  cursor: pointer;
 }

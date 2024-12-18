@@ -3,6 +3,7 @@ function fade(id) {
   const currentVisibleDiv = sections.find((el) => !document.getElementById(el).hidden); 
   document.getElementById(currentVisibleDiv).animation= "fade-out 0.3s forwards";
   document.getElementById(currentVisibleDiv).hidden=true;
+  window.scrollTo(0, 0);
   document.getElementById(id).hidden=false
   document.getElementById(id).style.animation = "fade-in 0.5s forwards";
 
@@ -13,6 +14,21 @@ function hide(id, par){
     if(div.hidden){par.innerHTML = "<u>"+par.innerText.replace("hide","show")+"</u>";}
     if(!div.hidden){par.innerHTML = "<u>"+par.innerText.replace("show","hide")+"</u>";}
 
+}
+function scrooll(id){
+    // Find the target element by ID
+    const element = document.getElementById(id);
+    
+    // Scroll the page to the target element with an offset
+    if (element) {
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - 175; // Adjust the offset as needed
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
 }
 //----------------------------------------------------------------------AGE----------------------------------------------------------
 function calculateExactAge(birthDate) {
@@ -40,24 +56,36 @@ function calculateExactAge(birthDate) {
 }
 document.getElementById("ageCalc").innerText = calculateExactAge("2004-02-06");
 //-------------------------------------------------------------------SLide show---------------------------------------------------------------------
-let slideIndex = 0;
-function showSlides() {
-    const slides = document.getElementsByClassName("about-slides");
+let slideIndex0 = 0;
+let slideIndex1 = 0;
+function showSlides(id) {
+    if(id=="about-slides"){slideIndex=slideIndex0;}
+    if(id=="exp-slides"){slideIndex=slideIndex1;}
+    const slides = document.getElementsByClassName(id);
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex - 1].style.display = "block";  
+    slides[slideIndex - 1].style.display = "block";
+
+    if(id=="about-slides"){slideIndex0=slideIndex;}
+    if(id=="exp-slides"){slideIndex1=slideIndex;}
 }
-function changeSlide(n) {
+function changeSlide(n,id) {
+    if(id=="about-slides"){slideIndex=slideIndex0;}
+    if(id=="exp-slides"){slideIndex=slideIndex1;}
     slideIndex += n;
-    const slides = document.getElementsByClassName("about-slides");
+    const slides = document.getElementsByClassName(id);
     if (slideIndex > slides.length) {slideIndex = 1}    
     if (slideIndex < 1) {slideIndex = slides.length}    
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
     slides[slideIndex - 1].style.display = "block";  
+    if(id=="about-slides"){slideIndex0=slideIndex;}
+    if(id=="exp-slides"){slideIndex1=slideIndex;}
 }
-showSlides();
+showSlides("about-slides");
+showSlides("exp-slides")
+//-------------------------------------------------slide show2-----------------------------------------------------------

@@ -17,7 +17,7 @@
           <li><button onclick="fade('about')">About</button></li>
           <li><button onclick="fade('education')">Education</button></li>
           <li><button onclick="fade('experience')">Experience</button></li>
-          <li><button onclick="fade('skills')">Skills</button></li>
+          <li><button onclick="fade('skills')">Skills & More</button></li>
         </ul>
       </nav></td>
     <td class="header_side"></td>
@@ -42,8 +42,8 @@
         <div class="about-slides">
           <img src="img/TuurMetGitaar.jpg" style="width:100%; height:100%;">
       </div>
-        <a class="about-prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="about-next" onclick="changeSlide(1)">&#10095;</a>
+        <a class="about-prev" onclick="changeSlide(-1,'about-slides')">&#10094;</a>
+        <a class="about-next" onclick="changeSlide(1,'about-slides')">&#10095;</a>
     </div>
     <div class="info">
       <ul>
@@ -63,7 +63,16 @@
 
 
 <div id="education" hidden>
-  <div class="school">
+  <div class="internal-toc">
+    <ul>
+      <li><button onclick="scrooll('mast')">University Master</button></li>
+      <li><button onclick="scrooll('bach')">University Bachelor</button></li>
+      <li><button onclick="scrooll('secu')">Secondary School</button></li>
+      <li><button onclick="scrooll('boa')">Boarding School</button></li>
+      <li><button onclick="scrooll('ele')">Elementary School</button></li>
+    </ul>
+  </div>
+  <div class="school" id="mast">
     <div class="level">University Master</div>
     <div class="timeperiod">2024-<br><div class="degree">Master Industrial & Applied Mathematics</div></div>
     <div class="name"><a href ="https://www.tue.nl/en/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: text-center"  viewBox="0 0 50 50" width="25" height="25">
@@ -77,7 +86,7 @@
         </figure>
         </div>
   </div>
-  <div class="school">
+  <div class="school" id="bach">
     <div class="level">University Bachelor</div>
     <div class="timeperiod">2021-2024<br><div class="degree">Bachelor in Mathematics</div></div>
     <div class="name"><a href ="https://www.uhasselt.be/nl" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: text-center"  viewBox="0 0 50 50" width="25" height="25">
@@ -93,7 +102,7 @@
         <div class="fileButton"><button onclick='hide("gradees",this)'><u>show grades >></u></button></div>
     <div class="file"><div id="gradees" hidden><embed src="files/TOR Willio.pdf"></div></div>
   </div>
-  <div class="school">
+  <div class="school" id="secu">
     <div class="level">Secondary School</div>
     <div class="timeperiod">2015-2021</div>
     <div class="name"><a href ="https://secundair.heilig-graf.be/campuspatersstraat" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: text-center"  viewBox="0 0 50 50" width="25" height="25">
@@ -107,7 +116,7 @@
         </figure>
         </div>
   </div>
-  <div class="school">
+  <div class="school" id="boa">
     <div class="level">Boarding School</div>
     <div class="timeperiod">2015-2021</div>
     <div class="name"><a href ="https://secundair.heilig-graf.be/internaat" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: text-center"  viewBox="0 0 50 50" width="25" height="25">
@@ -121,7 +130,7 @@
         </figure>
         </div>
   </div>
-  <div class="school">
+  <div class="school" id="ele">
     <div class="level">Elementary School</div>
     <div class="timeperiod">2010-2015</div>
     <div class="name"><a href ="http://basisschool.sint-gabriel.be/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: text-center"  viewBox="0 0 50 50" width="25" height="25">
@@ -137,8 +146,137 @@
   </div>
 
 </div>
-<div id="experience" hidden>This is the Experience section!</div>
-<div id="skills" hidden>This is the Skills section!</div>
+<div id="experience" hidden>
+  <h2 class="work_sep">Professional Work</h2>
+<div class="school">
+<div class="level">TU/e & Canon Production Printing</div>
+<div class="timeperiod">2024</div>
+<div class="name">Modelling Project</div>
+<div class="fileButton"><button onclick='hide("report",this)'><u>show report >></u></button></div>
+<div class="file"><div id="report" hidden><embed src="files/Modelleerweek_Canon.pdf"></div></div>
+</div>
+  <h2 class="work_sep">Student Work</h2>
+    <div class="school">
+    <div class="level">UHasselt & Private</div>
+    <div class="timeperiod">2023-</div>
+    <div class="name">Math Tutor</div>
+    </div>
+    <div class="school">
+    <div class="level">Bottle & Barrel</div>
+    <div class="timeperiod">2024-</div>
+    <div class="name">Warehouse Worker</div>
+    <div class="location"><a href="https://maps.app.goo.gl/cu7cmFy1Ys6VM8nd7" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle"  viewBox="0 0 50 50" width="25" height="25"><g fill="#777"><path d="M23.143 37.881c4.178-6.076 9.957-15.809 9.957-23.164a14.718 14.718 0 0 0-29.435 0c0 7.357 5.783 17.094 9.961 23.168C6.3 38.391 0 40.074 0 42.858 0 46.235 9.248 48 18.383 48s18.384-1.766 18.384-5.143c0-2.782-6.293-4.47-13.624-4.976zM5.121 14.717a13.264 13.264 0 0 1 26.527 0c0 9.492-10.665 23.852-13.264 27.209-2.598-3.357-13.263-17.713-13.263-27.209zm13.262 31.829c-10.334 0-16.929-2.184-16.929-3.688 0-1.309 5.03-3.123 13.155-3.57a91.912 91.912 0 0 0 3.209 4.273.729.729 0 0 0 1.129 0 93.58 93.58 0 0 0 3.213-4.277c8.125.447 13.151 2.266 13.151 3.574.002 1.504-6.593 3.688-16.928 3.688z"/><path d="M26.383 14.848a8 8 0 1 0-8 8 8.009 8.009 0 0 0 8-8zm-14.545 0a6.546 6.546 0 1 1 6.545 6.545 6.555 6.555 0 0 1-6.545-6.545z"/></g></svg></a>Borsbeek, Belgium</div>
+    </div>
+  <div class="school">
+    <div class="level">Lunch Garden</div>
+    <div class="timeperiod">2022-2024</div>
+    <div class="name">Diswasher</div>
+    <div class="location"><a href="https://maps.app.goo.gl/hK49pVX6CMUx9qE78" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle"  viewBox="0 0 50 50" width="25" height="25"><g fill="#777"><path d="M23.143 37.881c4.178-6.076 9.957-15.809 9.957-23.164a14.718 14.718 0 0 0-29.435 0c0 7.357 5.783 17.094 9.961 23.168C6.3 38.391 0 40.074 0 42.858 0 46.235 9.248 48 18.383 48s18.384-1.766 18.384-5.143c0-2.782-6.293-4.47-13.624-4.976zM5.121 14.717a13.264 13.264 0 0 1 26.527 0c0 9.492-10.665 23.852-13.264 27.209-2.598-3.357-13.263-17.713-13.263-27.209zm13.262 31.829c-10.334 0-16.929-2.184-16.929-3.688 0-1.309 5.03-3.123 13.155-3.57a91.912 91.912 0 0 0 3.209 4.273.729.729 0 0 0 1.129 0 93.58 93.58 0 0 0 3.213-4.277c8.125.447 13.151 2.266 13.151 3.574.002 1.504-6.593 3.688-16.928 3.688z"/><path d="M26.383 14.848a8 8 0 1 0-8 8 8.009 8.009 0 0 0 8-8zm-14.545 0a6.546 6.546 0 1 1 6.545 6.545 6.555 6.555 0 0 1-6.545-6.545z"/></g></svg></a>Borsbeek, Belgium</div>
+  </div>
+</div>
+
+
+<div id="skills" hidden>
+  <div class="internal-toc">
+    <ul>
+      <li><button onclick="scrooll('music')">Music & related</button></li>
+      <li><button onclick="scrooll('Languages')">Languages</button></li>
+      <li><button onclick="scrooll('scouts')">Scouts</button></li>
+      <li><button onclick="scrooll('program')">Programming Languages & related</button></li>
+    </ul>
+  </div>
+
+  <h2 class="work_sep"><div id="music">Music & related</div></h2>
+  <div class="school">
+    <div class="level">Guitarist</div>
+    <div class="timeperiod">2013-</div>
+    <div class="name">Blues, Rock related</div>
+  </div>
+  <div class="school">
+    <div class="level">Cover Band</div>
+    <div class="timeperiod">2023-</div>
+    <div class="name">T2NES</div>
+    <div class="img">
+      <figure>
+        <img src="img/T2NES.jpg">
+      </figure>
+      </div>
+  </div>
+  <h2 class="work_sep"><div  id="Languages">Languages</div> </h2>
+  <div class="school">
+    <div class="level">Français</div>
+    <div class="timeperiod"></div>
+    <div class="name">Moyen - bien</div>
+  </div>
+  <div class="school">
+    <div class="level">Nederlands</div>
+    <div class="timeperiod"></div>
+    <div class="name">Moedertaal</div>
+  </div>
+  <div class="school">
+    <div class="level">English</div>
+    <div class="timeperiod"></div>
+    <div class="name">Good</div>
+  </div>
+  <h2 class="work_sep" ><div id="scouts"> Scouts</div></h2>
+  <div class="school">
+    <div class="level">Scouts & Gidsen Vlaanderen</div>
+    <div class="timeperiod">2023-</div>
+    <div class="name">Quartermaster, "Foerier"</div>
+    <div class="img">
+      <figure>
+        <img src="img/pot1.jpg">
+      </figure>
+      </div>
+  </div>
+  <div class="school">
+    <div class="level">Scouts & Gidsen Vlaanderen</div>
+    <div class="timeperiod">2023</div>
+    <div class="name">Scout leader</div>
+    <div class="img">
+      <figure>
+        <img src="img/received_622334836630602.jpeg">
+      </figure>
+      </div>
+  </div>
+  <div class="school">
+    <div class="level">Scouts & Gidsen Vlaanderen</div>
+    <div class="timeperiod">2010-2022</div>
+    <div class="name">member</div>
+    <div class="img">
+      <figure>
+        <div class="exp-slideshow-container">
+          <div class="exp-slides exp-active">
+                <img src="img/pot2.png" style="width:100%; height:100%;">
+            </div>
+            <div class="exp-slides">
+                <img src="img/po3.png" style="width:100%; height:100%;">
+            </div>
+            <div class="exp-slides">
+              <img src="img/pot4.png" style="width:100%; height:100%;">
+          </div>
+            <a class="exp-prev" onclick="changeSlide(-1,'exp-slides')">&#10094;</a>
+            <a class="exp-next" onclick="changeSlide(1,'exp-slides')">&#10095;</a>
+        </div>
+      </figure>
+      </div>
+  </div>
+  <h2 class="work_sep" ><div id="program"> Programming Languages & related</div></h2>
+  <div style="  display: grid;
+  gap: 15px;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;font-size: 1em;
+  font-family: Roboto;
+  font-weight: bold;
+  color: #387fb9;">Python, MATLAB, R, Latex, C, HTML, CSS, JavaScript</div>
+
+</div>
 <footer>
   <div class="footer-container">
     <p style="color:white;"><a href="https://willio06.github.io/index.html">Tuur Willio</a> in the flesh</p>
@@ -151,11 +289,12 @@
       <li><a href="mailto:tuur.willio@gmail.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 500 500" class="icon" height="1em" width="1em">
         <g transform="scale(10,10)"><path d="M12,23.403v-0.013v-13.001l-0.12,-0.089h-0.01l-2.73,-2.02c-1.67,-1.24 -4.05,-1.18 -5.53,0.28c-0.99,0.98 -1.61,2.34 -1.61,3.85v3.602zM38,23.39v0.013l10,-7.391v-3.602c0,-1.49 -0.6,-2.85 -1.58,-3.83c-1.46,-1.457 -3.765,-1.628 -5.424,-0.403l-2.876,2.123l-0.12,0.089zM14,24.868l10.406,7.692c0.353,0.261 0.836,0.261 1.189,0l10.405,-7.692v-13.001l-11,8.133l-11,-8.133zM38,25.889v15.111c0,0.552 0.448,1 1,1h6.5c1.381,0 2.5,-1.119 2.5,-2.5v-21.003zM12,25.889l-10,-7.392v21.003c0,1.381 1.119,2.5 2.5,2.5h6.5c0.552,0 1,-0.448 1,-1z"></path></g>
         </svg></a></li>
-
+        <li><a href="https://open.spotify.com/user/willio06?si=affb1c4ed0f04afd" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 500 500" class="icon" height="1em" width="1em">
+          <g transform="scale(10,10)"><path d="M25.009,1.982C12.322,1.982,2,12.304,2,24.991S12.322,48,25.009,48s23.009-10.321,23.009-23.009S37.696,1.982,25.009,1.982z M34.748,35.333c-0.289,0.434-0.765,0.668-1.25,0.668c-0.286,0-0.575-0.081-0.831-0.252C30.194,34.1,26,33,22.5,33.001 c-3.714,0.002-6.498,0.914-6.526,0.923c-0.784,0.266-1.635-0.162-1.897-0.948s0.163-1.636,0.949-1.897 c0.132-0.044,3.279-1.075,7.474-1.077C26,30,30.868,30.944,34.332,33.253C35.022,33.713,35.208,34.644,34.748,35.333z M37.74,29.193 c-0.325,0.522-0.886,0.809-1.459,0.809c-0.31,0-0.624-0.083-0.906-0.26c-4.484-2.794-9.092-3.385-13.062-3.35 c-4.482,0.04-8.066,0.895-8.127,0.913c-0.907,0.258-1.861-0.272-2.12-1.183c-0.259-0.913,0.272-1.862,1.184-2.12 c0.277-0.079,3.854-0.959,8.751-1c4.465-0.037,10.029,0.61,15.191,3.826C37.995,27.328,38.242,28.388,37.74,29.193z M40.725,22.013 C40.352,22.647,39.684,23,38.998,23c-0.344,0-0.692-0.089-1.011-0.275c-5.226-3.068-11.58-3.719-15.99-3.725 c-0.021,0-0.042,0-0.063,0c-5.333,0-9.44,0.938-9.481,0.948c-1.078,0.247-2.151-0.419-2.401-1.495 c-0.25-1.075,0.417-2.149,1.492-2.4C11.729,16.01,16.117,15,21.934,15c0.023,0,0.046,0,0.069,0 c4.905,0.007,12.011,0.753,18.01,4.275C40.965,19.835,41.284,21.061,40.725,22.013z"></path>
+          </svg></a></li>
     </ul>
   </div>
 </footer>
 <script src="script.js"></script>
 </body>
 </html>
-
