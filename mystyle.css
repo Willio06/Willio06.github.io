@@ -2,6 +2,7 @@
 @font-face { font-family: Gorgone; src: url('fonts/Gorgonedemo-YzaOL.otf'); } 
 @font-face { font-family: RobotoThin; src: url('fonts/Roboto-Thin.ttf'); }
 @font-face { font-family: Roboto; src: url('fonts/Roboto-Regular.ttf'); }
+@font-face { font-family: RobotoBold; src: url('fonts/Roboto-Bold.ttf'); }
 body {
 background-image: url('img/website_back2.png');
 background-size: cover;
@@ -294,4 +295,86 @@ display: inline-block;
 .about-prev:hover, .about-next:hover {
     background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
     color: #f1f1f1; /* Slightly brighter text color */
+}
+/*------------------------------------------------------------------------------------------------------*/
+#education {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual school block */
+#education .school {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1.5fr;
+  grid-template-rows: auto auto;
+  gap: 15px;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Content Styling */
+#education .school .level {
+  font-size: 1.2em;
+  font-family: Roboto;
+  font-weight: bold;
+  color: #387fb9;
+}
+
+#education .school .timeperiod {
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: #2a4d69;
+}
+
+#education .school .name {
+  font-size: 1em;
+  font-family: Roboto;
+  color: #346083;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+#education .school .location {
+  font-family: Roboto;
+  font-size: 0.9em;
+  color: #777;
+}
+#education .school .location svg {
+  width: 30px; /* Adjust the size of the SVG */
+  height: 30px;
+  fill: #777; /* Default color of the icon */
+  transition: fill 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect: change SVG color and scale */
+#education .school .location:hover svg {
+  fill: #777; /* Change color on hover */
+  transform: scale(1.1); /* Enlarge the icon slightly */
+}
+/* Image Section */
+#education .school .img {
+  grid-column: span 3; /* Make image span full width in a block */
+  text-align: center;
+}
+
+#education .school .img img {
+  max-width: 750px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+}
+
+#education .school .img figcaption {
+  margin-top: 5px;
+  font-size: 0.8em;
+  color: #888;
 }
