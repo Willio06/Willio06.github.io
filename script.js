@@ -126,7 +126,7 @@ function darkmode(){
         document.getElementsByTagName("h1")[0].style.color = " rgb(176, 176, 176)"
         document.getElementById("grad1").style.backgroundImage = "linear-gradient(to top, rgba(255,0,0,0), rgb(0, 0, 0))"
         document.getElementById("grad2").style.backgroundImage = "radial-gradient(farthest-corner at 50% 45%, rgb(0, 0, 0)20%, rgba(255,0,0,0)90%)"
-        document.body.style.backgroundImage = "url('img/back_inverted.png')"; darkBool=!darkBool;}
+        document.body.style.backgroundImage = "url('img/invert2.png')"; darkBool=!darkBool;}
     else if(darkBool){
         document.getElementById('thh').innerText="dark mode"
         const sep = document.querySelectorAll(".work_sep div")
@@ -163,5 +163,5 @@ function darkmode(){
         document.getElementsByTagName("h1")[0].style.textShadow = "4px 2px 2px rgba(70, 70, 70 , 0.5)"
         document.getElementById("grad1").style.backgroundImage = "linear-gradient(to top, rgba(255,0,0,0), rgb(255, 255, 255))"
         document.getElementById("grad2").style.backgroundImage = "radial-gradient(farthest-corner at 50% 45%, rgba(255,255,255,1)20%, rgba(255,0,0,0)90%)"
-        document.body.style.backgroundImage = "url('img/long_back.png')"; darkBool=!darkBool;}
+        document.body.style.backgroundImage = "url('img/website_back2.png')"; darkBool=!darkBool;}
 }
