@@ -18,6 +18,7 @@ background-attachment: fixed;
   background-image: radial-gradient(farthest-corner at 50% 45%, rgba(255,255,255,1)20%, rgba(255,0,0,0)90%)
 }
 h1{
+  color: rgb(79, 79, 79);
   font-family: GROUPE,sans-serif;
   font-size: 75px;
   text-shadow:  4px 2px 2px rgba(70, 70, 70, 0.5);
@@ -160,7 +161,7 @@ display: inline-block;
     font-family: GROUPE, sans-serif;
     font-size: 16px;
     background-color: transparent; /* Transparent background to match design */
-    color: rgb(69, 67, 67); /* Button text color */
+    color: rgb(69, 69, 69); /* Button text color */
     border: none; /* Remove default button border */
     cursor: pointer; /* Change cursor to pointer */
     transition: color 0.3s ease; /* Smooth hover transition */
@@ -170,7 +171,7 @@ display: inline-block;
 }
 
 .nav-buttons button:hover {
-    color: #45405f; /* Change color on hover */
+    color: rgb(69, 64, 95); /* Change color on hover */
     text-shadow: 1px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
 
 }
@@ -378,8 +379,8 @@ display: inline-block;
   grid-template-rows: auto auto;
   gap: 15px;
   align-items: center;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(221, 221, 221);
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -398,7 +399,7 @@ display: inline-block;
   text-align: center;
   font-size: 1em;
   font-weight: bold;
-  color: #2a4d69;
+  color: rgb(42, 77, 105);
 }
 .school .degree {
   font-family: Roboto;
@@ -443,6 +444,7 @@ display: inline-block;
   aspect-ratio: 4 / 3;
 }
 .school .fileButton button{
+  color: rgb(69, 69, 69);
   font-size: 0.7em;
   padding: 0;
   border: none;
@@ -467,7 +469,7 @@ display: inline-block;
   font-family: GROUPE;
   text-align: center;
   font-size: 1em;
-  color:rgb(69, 67, 67) ;
+  color:rgb(69, 69, 69) ;
 }
 /*----------------------------------------------------------------------------------------------------------*/
 .internal-toc {
@@ -477,7 +479,7 @@ display: inline-block;
   left: 10px; /* Adjust based on where you want it on the screen */
   width: 300px; /* Set a fixed width */
   background-color: rgba(251, 251, 251, 0.5);
-  border: 1px solid #808080;
+  border: 1px solid rgb(128, 128, 128);
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -511,4 +513,25 @@ display: inline-block;
   text-decoration: underline;
   font-size: 0.65em;
   cursor: pointer;
+}
+.pinned-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+}
+
+.pinned-button button {
+  font-family: GROUPE;
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #7a7a7a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pinned-button button:hover {
+  background-color: #555;
 }
