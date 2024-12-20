@@ -92,6 +92,7 @@ showSlides("exp-slides")
 let darkBool = false
 function darkmode(){
     if(!darkBool){
+        document.getElementsByClassName("info")[0].style.color = "rgb(221,221,221)"
         document.getElementById("programm").style.backgroundColor = "rgb(0,0,0)"
         document.getElementById("programm").style.border = "1px solid rgb(34,34,34)"
         document.getElementById('thh').innerText="light mode"
@@ -130,6 +131,7 @@ function darkmode(){
         document.getElementById("grad2").style.backgroundImage = "radial-gradient(farthest-corner at 50% 45%, rgb(0, 0, 0)20%, rgba(255,0,0,0)90%)"
         document.body.style.backgroundImage = "url('img/invert2.png')"; darkBool=!darkBool;}
     else if(darkBool){
+        document.getElementsByClassName("info")[0].style.color = "rgb(34,34,34)"
         document.getElementById("programm").style.backgroundColor = "rgb(255,255,255)"
         document.getElementById("programm").style.border = "1px solid rgb(221,221,221)"
         document.getElementById('thh').innerText="dark mode"
