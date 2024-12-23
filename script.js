@@ -88,6 +88,19 @@ function changeSlide(n,id) {
 }
 showSlides("about-slides");
 showSlides("exp-slides")
+//-------------------------------------------------------------------HEAD GAP---------------------------------------------------------------------
+function adjustHeadgapHeight() {
+    const stickyHeader = document.querySelector('.sticky-header');
+    const headgap = document.getElementById('headgap');
+
+    if (stickyHeader && headgap) {
+      const headerHeight = stickyHeader.offsetHeight;
+      headgap.style.height = `${headerHeight}px`;
+    }
+  }
+  window.addEventListener('load', adjustHeadgapHeight);
+  window.addEventListener('resize', adjustHeadgapHeight);
+
 //-------------------------------------------------Invert Color-----------------------------------------------------------
 let darkBool = false
 function darkmode(){
