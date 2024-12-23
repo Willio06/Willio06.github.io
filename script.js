@@ -108,7 +108,7 @@ function darkmode(){
         document.getElementsByClassName("info")[0].style.color = "rgb(221,221,221)"
         document.getElementById("programm").style.backgroundColor = "rgb(0,0,0)"
         document.getElementById("programm").style.border = "1px solid rgb(34,34,34)"
-        document.getElementById('thh').innerText="light mode"
+        document.getElementById('darkButton').innerText="light mode"
         const sep = document.querySelectorAll(".work_sep div")
         sep.forEach((fr) => {
             fr.style.color = "rgb(186, 186, 186)";
@@ -147,7 +147,7 @@ function darkmode(){
         document.getElementsByClassName("info")[0].style.color = "rgb(34,34,34)"
         document.getElementById("programm").style.backgroundColor = "rgb(255,255,255)"
         document.getElementById("programm").style.border = "1px solid rgb(221,221,221)"
-        document.getElementById('thh').innerText="dark mode"
+        document.getElementById('darkButton').innerText="dark mode"
         const sep = document.querySelectorAll(".work_sep div")
         sep.forEach((fr) => {
             fr.style.color = "rgb(69, 69, 69)";
