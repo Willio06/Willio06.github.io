@@ -8,7 +8,7 @@ background-image: url('img/website_back2.png');
 background-size: cover;
 background-position: center center;
 background-repeat:repeat-y;
-background-attachment: auto;
+background-attachment: fixed;
 }
 html, body {
   margin: 0;
