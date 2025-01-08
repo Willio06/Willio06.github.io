@@ -1,5 +1,5 @@
 function fade(id) {
-  const sections = ['about', 'education', 'experience', 'skills'];
+  const sections = ['about', 'education', 'experience', 'skills','lib'];
   const currentVisibleDiv = sections.find((el) => !document.getElementById(el).hidden); 
   document.getElementById(currentVisibleDiv).animation= "fade-out 0.3s forwards";
   document.getElementById(currentVisibleDiv).hidden=true;
@@ -105,6 +105,11 @@ function adjustHeadgapHeight() {
 let darkBool = false
 function darkmode(){
     if(!darkBool){
+        const sh = document.querySelectorAll(".shelf")
+        sh.forEach((fr) => {
+            fr.style.backgroundColor = "rgb(0,0,0)"
+            fr.style.border = "1px solid rgb(34,34,34)"
+            });
         document.getElementsByClassName("info")[0].style.color = "rgb(221,221,221)"
         document.getElementById("programm").style.backgroundColor = "rgb(0,0,0)"
         document.getElementById("programm").style.border = "1px solid rgb(34,34,34)"
@@ -144,6 +149,11 @@ function darkmode(){
         document.getElementById("grad2").style.backgroundImage = "radial-gradient(farthest-corner at 50% 45%, rgb(0, 0, 0)20%, rgba(255,0,0,0)90%)"
         document.body.style.backgroundImage = "url('img/invert2.png')"; darkBool=!darkBool;}
     else if(darkBool){
+        const sh = document.querySelectorAll(".shelf")
+        sh.forEach((fr) => {
+            fr.style.backgroundColor = "rgb(255,255,255)"
+            fr.style.border = "1px solid rgb(221,221,221)"
+            });
         document.getElementsByClassName("info")[0].style.color = "rgb(34,34,34)"
         document.getElementById("programm").style.backgroundColor = "rgb(255,255,255)"
         document.getElementById("programm").style.border = "1px solid rgb(221,221,221)"
