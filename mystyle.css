@@ -447,6 +447,14 @@ display: inline-block;
   font-weight: bold;
   color: rgb(42, 77, 105);
 }
+.timeperiod .logo{
+  object-fit: contain;
+  text-align: center;
+}
+.logo img{
+  max-width: 80%;
+  min-width: 60%;
+}
 .school .degree {
   font-family: Roboto;
 }
@@ -456,6 +464,12 @@ display: inline-block;
   color: #346083;
   font-weight: bold;
   margin: 5px 0;
+}
+.name .subname {
+  font-size: 0.9em;
+  font-family: Roboto;
+  font-weight: normal;
+  color: #777;
 }
 
 .school .location {
@@ -475,6 +489,7 @@ display: inline-block;
   fill: #777; /* Change color on hover */
   transform: scale(1.1); /* Enlarge the icon slightly */
 }
+
 /* Image Section */
 .school .img {
   grid-column: span 3; /* Make image span full width in a block */
