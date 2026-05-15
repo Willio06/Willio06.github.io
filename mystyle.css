@@ -578,6 +578,7 @@ a.nostyle:visited {
 @media (max-width: 768px) {
   .sticky-header {
     height: auto; /* Allow the height to adjust dynamically */
+    padding: 0px;
   }
   .sticky-header h1 {
     font-size: 1.5em;
