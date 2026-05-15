@@ -28,47 +28,7 @@ h1{
   text-shadow:  4px 2px 2px rgba(70, 70, 70, 0.5);
 }
 
-@media (max-width: 768px) {
-  .sticky-header {
-    height: auto; /* Allow the height to adjust dynamically */
-    padding: 10px;
-  }
-  .sticky-header h1 {
-    font-size: 1.5em;
-  }
-  .nav-buttons {
-    flex-wrap: wrap; /* Allow buttons to wrap if needed */
-    gap: 10px;
-  }
-  .nav-buttons button {
-    font-size: 0.8em;
-    padding: 5px;
-  }
-  h1{
-    font-size: 50px;
-    text-shadow:  1px 1px 2px rgba(70, 70, 70, 0.5);
-}
-.work_sep{
-  font-size: 30px;
-}
 
-div{
-  font-size: 10px;
-}
-.school {
-  font-size: 15px;
-}
-.degree{
-  font-size: 15px;
-}
-.internal-toc{
-  font-size: 30px;
-}
-.pinned-button{
-  font-size: 5vw;
-
-}
-}
 div{
   font-family: RobotoThin;
   font-size: 30px;
@@ -515,8 +475,8 @@ display: inline-block;
   cursor: pointer;
 }
 .school .img img {
-  max-width: 80%;
-  object-fit: cover;
+  max-width: 100%;
+  width: auto;
   border-radius: 6px;
   transition: opacity 0.3s ease;
 }
@@ -567,7 +527,7 @@ display: inline-block;
   font-family: GROUPE;
   text-decoration: none;
   color: #387fb9;
-  font-size: 0.6em;
+  font-size: 1.5vw;
   border: none;
   background: none;
   transition: font-size 0.3s ease, color 0.3s ease;
@@ -577,7 +537,7 @@ display: inline-block;
 
 .internal-toc button:hover {
   text-decoration: underline;
-  font-size: 0.65em;
+  font-size: 1.75vw;
   cursor: pointer;
 }
 .pinned-button {
@@ -612,4 +572,117 @@ a.nostyle:visited {
     text-decoration: inherit;
     color: inherit;
     /* cursor: auto; */
+}
+
+
+@media (max-width: 768px) {
+  .sticky-header {
+    height: auto; /* Allow the height to adjust dynamically */
+    padding: 10px;
+  }
+  .sticky-header h1 {
+    font-size: 1.5em;
+  }
+  .nav-buttons {
+    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+    gap: 10px;
+  }
+  .nav-buttons button {
+    font-size: 0.8em;
+    padding: 5px;
+  }
+  h1{
+    font-size: 50px;
+    text-shadow:  1px 1px 2px rgba(70, 70, 70, 0.5);
+  }
+  .work_sep{
+    font-size: 30px;
+  }
+
+  div{
+    font-size: 10px;
+  }
+  .school {
+    font-size: 15px;
+  }
+  .degree{
+    font-size: 15px;
+  }
+  .internal-toc{
+    font-size: 2em;
+  }
+  .pinned-button{
+    font-size: 5vw;
+  }
+
+  /* Collapse about section into a single column on small screens */
+  #about #inside {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-slideshow-container,
+  .info {
+    width: 70%;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:  2.5em;
+  }
+  .info #ageCalc{
+    font-size: 1em;
+  }
+  .about-slideshow-container {
+    margin: 0 auto 20px;
+  }
+
+  /* Move the side table of contents to the top and make it full width */
+  .internal-toc {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 91.5%;
+    max-width: 100%;
+    /* margin: 0 10px 20px; */
+    background-color: rgba(251, 251, 251, 0.85);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  .internal-toc ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 0;
+    justify-content: center;
+  }
+  .internal-toc li {
+    margin: 0;
+  }
+  .internal-toc button {
+    font-size: 0.8em;
+  }
+
+  /* Let school cards use full width and place location on its own second row */
+  .school {
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    padding: 16px;
+  }
+  .school .location,
+  .school .img,
+  .school .file {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+  .school .img img {
+    max-width: 100%;
+  }
+  .shelf {
+    width: 100%;
+  }
+  #education, #experience, #skills, #lib {
+    max-width: 70%;
+  }
 }
