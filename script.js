@@ -194,3 +194,61 @@ function darkmode(){
         document.getElementById("grad2").style.backgroundImage = "radial-gradient(farthest-corner at 50% 45%, rgba(255,255,255,1)20%, rgba(255,0,0,0)90%)"
         document.body.style.backgroundImage = "url('img/website_back2.png')"; darkBool=!darkBool;}
 }
+
+async function updateSpotify() {
+    const element = document.getElementById("spotify");
+
+    if (!element) {
+        return;
+    }
+
+    try {
+        const response = await fetch("https://spotifystatus.tuur-willio.workers.dev/get-now-playing");
+        if (!response.ok) {
+            throw new Error(`Spotify status request failed: ${response.status}`);
+        }
+
+        const data = await response.json();
+        const song = data.is_playing && data.item;
+
+        if (!song || !song.name || !Array.isArray(song.artists)) {
+            element.hidden = true;
+            element.replaceChildren();
+            return;
+        }
+
+        const artist = song.artists
+            .map((artist) => artist.name)
+            .filter(Boolean)
+            .join(", ");
+
+        const coverUrl = song.album?.images?.[0]?.url;
+
+        if (!artist || !coverUrl) {
+            element.hidden = true;
+            element.replaceChildren();
+            return;
+        }
+
+        element.replaceChildren();
+        const cover = document.createElement("img");
+        cover.src = coverUrl;
+        cover.alt = "";
+        cover.loading = "lazy";
+        const label = document.createElement("span");
+        label.className = "spotify-label";
+        label.textContent = "Now playing";
+        const title = document.createElement("strong");
+        title.textContent = song.name;
+        const details = document.createElement("span");
+        details.textContent = artist;
+        element.append(cover, label, title, details);
+        element.hidden = false;
+    } catch (error) {
+        element.hidden = true;
+        element.replaceChildren();
+    }
+}
+
+updateSpotify();
+setInterval(updateSpotify, 30_000);
