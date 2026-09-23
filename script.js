@@ -242,7 +242,10 @@ async function updateSpotify() {
         title.textContent = song.name;
         const details = document.createElement("span");
         details.textContent = artist;
-        element.append(cover, label, title, details);
+        const text = document.createElement("span");
+        text.className = "spotify-details";
+        text.append(label, title, details);
+        element.append(cover, text);
         element.hidden = false;
     } catch (error) {
         element.hidden = true;
