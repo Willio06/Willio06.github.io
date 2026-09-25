@@ -782,7 +782,7 @@ a.nostyle:visited {
   }
 
   .school {
-    width: 100%;
+    width: 75%;
     box-sizing: border-box;
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
@@ -790,6 +790,7 @@ a.nostyle:visited {
     padding: 12px;
     min-width: 0;
     overflow: hidden;
+    align-self: center;
   }
 
   .school > * {
