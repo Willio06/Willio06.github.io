@@ -213,7 +213,7 @@ async function updateSpotify() {
         const song = data.item;
 
         if (!song || !song.name || !Array.isArray(song.artists)) { // insert !live if only live visble here!
-            console.warn("Spotify response is missing required song information:");
+            console.warn("Spotify response is missing required song information");
             element.hidden = true;
             element.replaceChildren();
             return;
@@ -227,7 +227,7 @@ async function updateSpotify() {
         const coverUrl = song.album?.images?.[0]?.url;
 
         if (!artist || !coverUrl) {
-            console.warn("Spotify response is missing required artist or cover information:");
+            console.warn("Spotify response is missing required artist or cover information");
             element.hidden = true;
             element.replaceChildren();
             return;
