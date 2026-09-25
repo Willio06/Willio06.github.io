@@ -240,6 +240,14 @@ async function updateSpotify() {
         label.className = "spotify-label";
         label.textContent = "Now playing";
 
+        const refreshButton = document.createElement("button");
+        refreshButton.type = "button";
+        refreshButton.className = "spotify-refresh";
+        refreshButton.setAttribute("aria-label", "Refresh now playing");
+        refreshButton.title = "Refresh now playing";
+        refreshButton.textContent = "↻";
+        refreshButton.addEventListener("click", updateSpotify);
+        label.appendChild(refreshButton);
         const title = document.createElement("strong");
         title.textContent = song.name;
 
@@ -250,15 +258,7 @@ async function updateSpotify() {
         text.className = "spotify-details";
         text.append(label, title, details);
 
-        const refreshButton = document.createElement("button");
-        refreshButton.type = "button";
-        refreshButton.className = "spotify-refresh";
-        refreshButton.setAttribute("aria-label", "Refresh now playing");
-        refreshButton.title = "Refresh now playing";
-        refreshButton.textContent = "↻";
-        refreshButton.addEventListener("click", updateSpotify);
-
-        element.append(cover, text, refreshButton);
+        element.append(cover, text);
         element.hidden = false;
     } catch (error) {
         element.hidden = true;
