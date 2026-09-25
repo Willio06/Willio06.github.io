@@ -209,9 +209,11 @@ async function updateSpotify() {
         }
 
         const data = await response.json();
-        const song = data.is_playing && data.item;
+        const live = data.is_playing;
+        const song = data.item;
 
-        if (!song || !song.name || !Array.isArray(song.artists)) {
+        if (!song || !song.name || !Array.isArray(song.artists)) { // insert !live if only live visble here!
+            console.warn("Spotify response is missing required song information:");
             element.hidden = true;
             element.replaceChildren();
             return;
@@ -225,6 +227,7 @@ async function updateSpotify() {
         const coverUrl = song.album?.images?.[0]?.url;
 
         if (!artist || !coverUrl) {
+            console.warn("Spotify response is missing required artist or cover information:");
             element.hidden = true;
             element.replaceChildren();
             return;
@@ -238,7 +241,11 @@ async function updateSpotify() {
 
         const label = document.createElement("span");
         label.className = "spotify-label";
-        label.textContent = "Now playing";
+        if (!live) {
+            label.textContent = "Last played";
+        } else {
+            label.textContent = "Now playing";
+        }
 
         const refreshButton = document.createElement("button");
         refreshButton.type = "button";
