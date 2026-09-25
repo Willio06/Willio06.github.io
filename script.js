@@ -235,17 +235,30 @@ async function updateSpotify() {
         cover.src = coverUrl;
         cover.alt = "";
         cover.loading = "lazy";
+
         const label = document.createElement("span");
         label.className = "spotify-label";
         label.textContent = "Now playing";
+
         const title = document.createElement("strong");
         title.textContent = song.name;
+
         const details = document.createElement("span");
         details.textContent = artist;
+
         const text = document.createElement("span");
         text.className = "spotify-details";
         text.append(label, title, details);
-        element.append(cover, text);
+
+        const refreshButton = document.createElement("button");
+        refreshButton.type = "button";
+        refreshButton.className = "spotify-refresh";
+        refreshButton.setAttribute("aria-label", "Refresh now playing");
+        refreshButton.title = "Refresh now playing";
+        refreshButton.textContent = "↻";
+        refreshButton.addEventListener("click", updateSpotify);
+
+        element.append(cover, text, refreshButton);
         element.hidden = false;
     } catch (error) {
         element.hidden = true;

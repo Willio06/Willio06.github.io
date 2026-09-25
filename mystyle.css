@@ -220,6 +220,27 @@ display: inline-block;
     min-width: 0;
   }
 
+  .spotify-refresh {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.18);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 4px;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .spotify-refresh:hover {
+    background: rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+  }
+
   #spotify strong,
   .spotify-details > span:last-child {
     overflow: hidden;
